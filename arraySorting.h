@@ -13,13 +13,14 @@ private:
     clock_t endTIme{};
     int **array = new int * [NUMBER_OF_ARRAYS];
     void createRandomIntArray();
-
+    void mergeSortArray(int [], unsigned int, unsigned int);
+    void mergeSubArrays(int [], unsigned int, unsigned int, unsigned int);
+    inline void copyNewArrayIntoOriginalArray(const int [], int []) const;
 
 public:
     explicit ArraySorting(int);
-
     void sortUnsortedArray();
     void sortSortedArray();
     void inverseSortedArray();
-    void mergeSortArray(int [], unsigned int, unsigned int);
+
 };
