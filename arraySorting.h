@@ -7,17 +7,19 @@
 
 class ArraySorting {
 private:
-    int SIZE;
-    clock_t startTime;
-    clock_t endTIme;
-    int array[];
+    const int NUMBER_OF_ARRAYS = 10;
+    unsigned int SIZE_OF_2D_ARRAY;
+    clock_t startTime{};
+    clock_t endTIme{};
+    int **array = new int * [NUMBER_OF_ARRAYS];
     void createRandomIntArray();
 
 
 public:
-    ArraySorting();
     explicit ArraySorting(int);
 
     void sortUnsortedArray();
+    void sortSortedArray();
     void inverseSortedArray();
+    void mergeSortArray(int [], unsigned int, unsigned int);
 };
