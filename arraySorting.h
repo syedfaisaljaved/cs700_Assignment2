@@ -2,7 +2,22 @@
 // Created by Faisal Javed on 09/10/22.
 //
 
-#ifndef CS700_ASSIGNMENT2_ARRAYSORTING_H
-#define CS700_ASSIGNMENT2_ARRAYSORTING_H
+#pragma once
+#include <ctime>
 
-#endif //CS700_ASSIGNMENT2_ARRAYSORTING_H
+class ArraySorting {
+private:
+    int SIZE;
+    clock_t startTime;
+    clock_t endTIme;
+    int array[];
+    void createRandomIntArray();
+
+
+public:
+    ArraySorting();
+    explicit ArraySorting(int);
+
+    void sortUnsortedArray();
+    void inverseSortedArray();
+};
