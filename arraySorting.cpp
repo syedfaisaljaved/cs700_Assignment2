@@ -29,7 +29,7 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
         return;
     }
 
-    int middleIndex = (leftIndex + rightIndex) / 2;
+    unsigned int middleIndex = (leftIndex + rightIndex) / 2;
     mergeSortArray(subArray, leftIndex, middleIndex);
     mergeSortArray(subArray, middleIndex + 1, rightIndex);
     mergeSubArrays(subArray, leftIndex, middleIndex, rightIndex);
@@ -38,12 +38,12 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
 void ArraySorting::mergeSubArrays(int subArray[], unsigned int leftIndex, unsigned int middleIndex,
                                   unsigned int rightIndex) {
     int newSubArray[SIZE_OF_2D_ARRAY];
-    int startIndexPointer = leftIndex;
-    int endIndexPointer = middleIndex + 1;
-    int newIndexPointer = leftIndex;
+    unsigned int startIndexPointer = leftIndex;
+    unsigned int endIndexPointer = middleIndex + 1;
+    unsigned int newIndexPointer = leftIndex;
 
-    while (startIndexPointer <= middleIndex && endIndexPointer <= rightIndex){
-        if(subArray[startIndexPointer] < subArray[endIndexPointer]){
+    while (startIndexPointer <= middleIndex && endIndexPointer <= rightIndex) {
+        if (subArray[startIndexPointer] < subArray[endIndexPointer]) {
             newSubArray[newIndexPointer] = subArray[startIndexPointer];
             startIndexPointer++;
         } else {
@@ -53,14 +53,14 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int leftIndex, unsign
         newIndexPointer++;
     }
 
-    if(startIndexPointer > middleIndex){
-        while (endIndexPointer <= rightIndex){
+    if (startIndexPointer > middleIndex) {
+        while (endIndexPointer <= rightIndex) {
             newSubArray[newIndexPointer] = subArray[endIndexPointer];
             endIndexPointer++;
             newIndexPointer++;
         }
     } else {
-        while (startIndexPointer <= middleIndex){
+        while (startIndexPointer <= middleIndex) {
             newSubArray[newIndexPointer] = subArray[startIndexPointer];
             startIndexPointer++;
             newIndexPointer++;
@@ -71,8 +71,28 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int leftIndex, unsign
 }
 
 inline void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int originalArray[]) const {
-    for(int iterator = 0U; iterator < SIZE_OF_2D_ARRAY; iterator++){
+    for (int iterator = 0U; iterator < SIZE_OF_2D_ARRAY; iterator++) {
         originalArray[iterator] = newArray[iterator];
     }
+}
+
+void ArraySorting::sortSortedArray() {
+    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
+        mergeSortArray(array[i], 0, SIZE_OF_2D_ARRAY - 1);
+    }
+}
+
+void ArraySorting::reverseSortedArray() {
+    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
+        for (int j = 0U; j < SIZE_OF_2D_ARRAY / 2; j++) {
+            swap(array[i][j], array[i][SIZE_OF_2D_ARRAY - j - 1]);
+        }
+    }
+}
+
+void ArraySorting::swap(int &firstValue, int &secondValue) {
+    int temp = firstValue;
+    firstValue = secondValue;
+    secondValue = temp;
 }
 

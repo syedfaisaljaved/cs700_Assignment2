@@ -16,11 +16,11 @@ private:
     void mergeSortArray(int [], unsigned int, unsigned int);
     void mergeSubArrays(int [], unsigned int, unsigned int, unsigned int);
     inline void copyNewArrayIntoOriginalArray(const int [], int []) const;
+    void swap(int &, int &);
 
 public:
     explicit ArraySorting(int);
     void sortUnsortedArray();
     void sortSortedArray();
-    void inverseSortedArray();
-
+    void reverseSortedArray();
 };
