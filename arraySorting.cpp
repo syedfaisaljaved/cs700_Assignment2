@@ -2,6 +2,7 @@
 // Created by Faisal Javed on 09/10/22.
 //
 #include <cstdlib>
+#include <ctime>
 #include "arraySorting.h"
 
 void ArraySorting::createRandomIntArray() {
@@ -15,12 +16,18 @@ void ArraySorting::createRandomIntArray() {
 
 ArraySorting::ArraySorting(int size) {
     SIZE_OF_2D_ARRAY = size;
+    srand(time(0));
     createRandomIntArray();
 }
 
 void ArraySorting::sortUnsortedArray() {
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
+        clock_t startTime = clock();
         mergeSortArray(array[i], 0, SIZE_OF_2D_ARRAY - 1);
+        clock_t endTime = clock();
+
+        double milliseconds = ((endTime - startTime) / CLOCKS_PER_SEC) * 1000.0;
+
     }
 }
 
