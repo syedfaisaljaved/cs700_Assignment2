@@ -15,7 +15,7 @@ private:
     void createRandomIntArray();
     void mergeSortArray(int [], unsigned int, unsigned int);
     void mergeSubArrays(int [], unsigned int &, unsigned int &, unsigned int &);
-    void copyNewArrayIntoOriginalArray(const int [], int [], unsigned int &, unsigned int) ;
+    void copyNewArrayIntoOriginalArray(const int [], int [], unsigned int , unsigned int) ;
     void swap(int &, int &);
     inline void printDoubleDivider();
     inline void printDivider();
@@ -23,6 +23,7 @@ private:
     inline void printRandomTimeResult();
     inline void printSortedTimeResult();
     inline void printReverseTimeResult();
+    inline void printArraySize();
     void sortUnsortedArray();
     void sortSortedArray();
     void reverseSortedArray();

@@ -57,13 +57,13 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
 
 void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsigned int &middleIndex,
                                   unsigned int &rightIndex) {
-    int newSubArray[SIZE_OF_2D_ARRAY];
+    int * newSubArray = new int[rightIndex - leftIndex + 1];
     unsigned int startIndexPointer = leftIndex;
     unsigned int endIndexPointer = middleIndex + 1;
-    unsigned int newIndexPointer = leftIndex;
+    unsigned int newIndexPointer = 0;
 
     while (startIndexPointer <= middleIndex && endIndexPointer <= rightIndex) {
-        if (subArray[startIndexPointer] < subArray[endIndexPointer]) {
+        if (subArray[startIndexPointer] <= subArray[endIndexPointer]) {
             newSubArray[newIndexPointer] = subArray[startIndexPointer];
             startIndexPointer++;
         } else {
@@ -73,27 +73,26 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
         newIndexPointer++;
     }
 
-    if (startIndexPointer > middleIndex) {
-        while (endIndexPointer <= rightIndex) {
-            newSubArray[newIndexPointer] = subArray[endIndexPointer];
-            endIndexPointer++;
-            newIndexPointer++;
-        }
-    } else {
-        while (startIndexPointer <= middleIndex) {
-            newSubArray[newIndexPointer] = subArray[startIndexPointer];
-            startIndexPointer++;
-            newIndexPointer++;
-        }
+
+    while (startIndexPointer <= middleIndex) {
+        newSubArray[newIndexPointer] = subArray[startIndexPointer];
+        startIndexPointer++;
+        newIndexPointer++;
     }
 
-    copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex, leftIndex);
+    while (endIndexPointer <= rightIndex) {
+        newSubArray[newIndexPointer] = subArray[endIndexPointer];
+        endIndexPointer++;
+        newIndexPointer++;
+    }
+
+    copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex-leftIndex+1, leftIndex);
 }
 
-void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int originalArray[], unsigned int &arrayLength,
+void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int originalArray[], unsigned int arrayLength,
                                                  unsigned int index) {
-    for (; index < arrayLength; index++) {
-        originalArray[index] = newArray[index];
+    for (int i = 0; i < arrayLength; index++, i++) {
+        originalArray[index] = newArray[i];
     }
 }
 
@@ -137,6 +136,8 @@ void ArraySorting::swap(int &firstValue, int &secondValue) {
 
 void ArraySorting::display() {
 
+    printArraySize();
+
     printDoubleDivider();
 
     printHeader();
@@ -179,7 +180,7 @@ inline void ArraySorting::printHeader() {
 inline void ArraySorting::printRandomTimeResult() {
     cout << left << setw(20) << "| Random Time (ms)";
     for (double i: estimatedTimeForSortingRandomArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
+        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
 }
@@ -187,7 +188,7 @@ inline void ArraySorting::printRandomTimeResult() {
 inline void ArraySorting::printSortedTimeResult() {
     cout << left << setw(20) << "| Sorted Time (ms)";
     for (double i: estimatedTimeForSortingSortedArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
+        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
 }
@@ -195,8 +196,12 @@ inline void ArraySorting::printSortedTimeResult() {
 inline void ArraySorting::printReverseTimeResult() {
     cout << left << setw(20) << "| Reverse Time (ms)";
     for (double i: estimatedTimeForReversingSortedArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
+        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
+}
+
+inline void ArraySorting::printArraySize() {
+    cout << endl << "For array size: " << SIZE_OF_2D_ARRAY << endl << endl;
 }
 
