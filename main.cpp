@@ -10,4 +10,5 @@ int main() {
 
     ArraySorting arraySorting3 = ArraySorting(10000000);
     arraySorting3.display();
+    return 0;
 }

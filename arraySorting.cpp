@@ -23,19 +23,19 @@ ArraySorting::ArraySorting(int size) {
     SIZE_OF_2D_ARRAY = size;
     srand(time(0));
     createRandomIntArray();
-//    sortUnsortedArray();
     sortArray(estimatedTimeForSortingRandomArr);
     sortArray(estimatedTimeForSortingSortedArr);
+    reverseSortedArray();
     sortArray(estimatedTimeForReversingSortedArr);
-//    reverseSortedArray();
 }
+
 
 void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsigned int rightIndex) {
     if (leftIndex >= rightIndex) {
         return;
     }
 
-    unsigned int middleIndex = (leftIndex + rightIndex) / 2;
+    unsigned int middleIndex = leftIndex + (rightIndex - leftIndex) / 2;
     mergeSortArray(subArray, leftIndex, middleIndex);
     mergeSortArray(subArray, middleIndex + 1, rightIndex);
     mergeSubArrays(subArray, leftIndex, middleIndex, rightIndex);
@@ -74,6 +74,8 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
     }
 
     copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex-leftIndex+1, leftIndex);
+
+    delete[] newSubArray;
 }
 
 void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int originalArray[], unsigned int arrayLength,
@@ -95,6 +97,16 @@ void ArraySorting::sortArray(double timeArray[]) {
         double millisecond = duration_cast<microseconds>(endTime - startTime).count() / 1000.0;
 
         timeArray[i] = millisecond;
+    }
+}
+
+void ArraySorting::reverseSortedArray() {
+    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
+
+        for (int j = 0U; j < SIZE_OF_2D_ARRAY / 2; j++) {
+            swap(array[i][j], array[i][SIZE_OF_2D_ARRAY - j - 1]);
+        }
+
     }
 }
 
