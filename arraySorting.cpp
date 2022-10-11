@@ -23,6 +23,9 @@ ArraySorting::ArraySorting(int size) {
     SIZE_OF_2D_ARRAY = size;
     srand(time(0));
     createRandomIntArray();
+    sortUnsortedArray();
+    sortSortedArray();
+    reverseSortedArray();
 }
 
 void ArraySorting::sortUnsortedArray() {
@@ -134,34 +137,21 @@ void ArraySorting::swap(int &firstValue, int &secondValue) {
 
 void ArraySorting::display() {
 
+    printDoubleDivider();
+
+    printHeader();
 
     printDoubleDivider();
-    cout << left << setw(20) << "| Time Test";
-    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
-        cout << left << setw(12) << "| Array " + to_string(i + 1) + " ";
-    }
-    cout << left << setw(1) << "|" << endl;
 
-    printDoubleDivider();
-    cout << left << setw(20) << "| Random Time (ms)";
-    for (double i: estimatedTimeForSortingRandomArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
-    }
-    cout << left << setw(1) << "|" << endl;
+    printRandomTimeResult();
 
     printDivider();
-    cout << left << setw(20) << "| Sorted Time (ms)";
-    for (double i: estimatedTimeForSortingSortedArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
-    }
-    cout << left << setw(1) << "|" << endl;
+
+    printSortedTimeResult();
 
     printDivider();
-    cout << left << setw(20) << "| Reverse Time (ms)";
-    for (double i: estimatedTimeForReversingSortedArr) {
-        cout << left << setw(12) << "| " + to_string(i) + " ";
-    }
-    cout << left << setw(1) << "|" << endl;
+
+    printReverseTimeResult();
 
     printDoubleDivider();
 }
@@ -176,5 +166,37 @@ inline void ArraySorting::printDivider() {
     cout
             << "---------------------------------------------------------------------------------------------------------------------------------------------"
             << endl;
+}
+
+inline void ArraySorting::printHeader() {
+    cout << left << setw(20) << "| Time Test";
+    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
+        cout << left << setw(12) << "| Array " + to_string(i + 1) + " ";
+    }
+    cout << left << setw(1) << "|" << endl;
+}
+
+inline void ArraySorting::printRandomTimeResult() {
+    cout << left << setw(20) << "| Random Time (ms)";
+    for (double i: estimatedTimeForSortingRandomArr) {
+        cout << left << setw(12) << "| " + to_string(i) + " ";
+    }
+    cout << left << setw(1) << "|" << endl;
+}
+
+inline void ArraySorting::printSortedTimeResult() {
+    cout << left << setw(20) << "| Sorted Time (ms)";
+    for (double i: estimatedTimeForSortingSortedArr) {
+        cout << left << setw(12) << "| " + to_string(i) + " ";
+    }
+    cout << left << setw(1) << "|" << endl;
+}
+
+inline void ArraySorting::printReverseTimeResult() {
+    cout << left << setw(20) << "| Reverse Time (ms)";
+    for (double i: estimatedTimeForReversingSortedArr) {
+        cout << left << setw(12) << "| " + to_string(i) + " ";
+    }
+    cout << left << setw(1) << "|" << endl;
 }
 

@@ -20,11 +20,14 @@ private:
     inline void printDoubleDivider();
     inline void printDivider();
     inline void printHeader();
-
-public:
-    explicit ArraySorting(int);
+    inline void printRandomTimeResult();
+    inline void printSortedTimeResult();
+    inline void printReverseTimeResult();
     void sortUnsortedArray();
     void sortSortedArray();
     void reverseSortedArray();
+
+public:
+    explicit ArraySorting(int);
     void display();
 };
