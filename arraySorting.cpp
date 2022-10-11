@@ -14,7 +14,7 @@ void ArraySorting::createRandomIntArray() {
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
         array[i] = new int[SIZE_OF_2D_ARRAY];
         for (int j = 0U; j < SIZE_OF_2D_ARRAY; j++) {
-            array[i][j] = rand() % 100 + 1;
+            array[i][j] = rand() % SIZE_OF_2D_ARRAY + 1;
         }
     }
 }
@@ -23,24 +23,11 @@ ArraySorting::ArraySorting(int size) {
     SIZE_OF_2D_ARRAY = size;
     srand(time(0));
     createRandomIntArray();
-    sortUnsortedArray();
-    sortSortedArray();
-    reverseSortedArray();
-}
-
-void ArraySorting::sortUnsortedArray() {
-    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
-
-        auto startTime = steady_clock::now();
-
-        mergeSortArray(array[i], 0, SIZE_OF_2D_ARRAY - 1);
-
-        auto endTime = steady_clock::now();
-
-        double millisecond = duration_cast<microseconds>(endTime - startTime).count() / 1000.0;
-
-        estimatedTimeForSortingRandomArr[i] = millisecond;
-    }
+//    sortUnsortedArray();
+    sortArray(estimatedTimeForSortingRandomArr);
+    sortArray(estimatedTimeForSortingSortedArr);
+    sortArray(estimatedTimeForReversingSortedArr);
+//    reverseSortedArray();
 }
 
 void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsigned int rightIndex) {
@@ -96,35 +83,18 @@ void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int origi
     }
 }
 
-void ArraySorting::sortSortedArray() {
+void ArraySorting::sortArray(double timeArray[]) {
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
 
-        auto startTime = high_resolution_clock::now();
+        auto startTime = steady_clock::now();
 
         mergeSortArray(array[i], 0, SIZE_OF_2D_ARRAY - 1);
 
-        auto endTime = high_resolution_clock::now();
+        auto endTime = steady_clock::now();
 
         double millisecond = duration_cast<microseconds>(endTime - startTime).count() / 1000.0;
 
-        estimatedTimeForSortingSortedArr[i] = millisecond;
-    }
-}
-
-void ArraySorting::reverseSortedArray() {
-    for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
-
-        auto startTime = high_resolution_clock::now();
-
-        for (int j = 0U; j < SIZE_OF_2D_ARRAY / 2; j++) {
-            swap(array[i][j], array[i][SIZE_OF_2D_ARRAY - j - 1]);
-        }
-
-        auto endTime = high_resolution_clock::now();
-
-        double millisecond = duration_cast<microseconds>(endTime - startTime).count() / 1000.0;
-
-        estimatedTimeForReversingSortedArr[i] = millisecond;
+        timeArray[i] = millisecond;
     }
 }
 

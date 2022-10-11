@@ -24,9 +24,7 @@ private:
     inline void printSortedTimeResult();
     inline void printReverseTimeResult();
     inline void printArraySize();
-    void sortUnsortedArray();
-    void sortSortedArray();
-    void reverseSortedArray();
+    void sortArray(double timeArray[]);
 
 public:
     explicit ArraySorting(int);
