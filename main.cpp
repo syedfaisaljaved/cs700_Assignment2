@@ -1,7 +1,10 @@
 #include <iostream>
 #include "arraySorting.h"
+#include "sin_cos.h"
+
 using namespace std;
-int main() {
+
+void arraySortingModule(){
     ArraySorting arraySorting1 = ArraySorting(100000);
     arraySorting1.display();
 
@@ -10,5 +13,10 @@ int main() {
 
     ArraySorting arraySorting3 = ArraySorting(10000000);
     arraySorting3.display();
+}
+
+int main() {
+    arraySortingModule();
+//    whiteBoxTesting();
     return 0;
 }

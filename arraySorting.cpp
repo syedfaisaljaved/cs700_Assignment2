@@ -44,7 +44,7 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
 
 void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsigned int &middleIndex,
                                   unsigned int &rightIndex) {
-    int * newSubArray = new int[rightIndex - leftIndex + 1];
+    int *newSubArray = new int[rightIndex - leftIndex + 1];
     unsigned int startIndexPointer = leftIndex;
     unsigned int endIndexPointer = middleIndex + 1;
     unsigned int newIndexPointer = 0;
@@ -73,7 +73,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
         newIndexPointer++;
     }
 
-    copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex-leftIndex+1, leftIndex);
+    copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex - leftIndex + 1, leftIndex);
 
     delete[] newSubArray;
 }
@@ -162,7 +162,7 @@ inline void ArraySorting::printHeader() {
 inline void ArraySorting::printRandomTimeResult() {
     cout << left << setw(20) << "| Random Time (ms)";
     for (double i: estimatedTimeForSortingRandomArr) {
-        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
+        cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
 }
@@ -170,7 +170,7 @@ inline void ArraySorting::printRandomTimeResult() {
 inline void ArraySorting::printSortedTimeResult() {
     cout << left << setw(20) << "| Sorted Time (ms)";
     for (double i: estimatedTimeForSortingSortedArr) {
-        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
+        cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
 }
@@ -178,7 +178,7 @@ inline void ArraySorting::printSortedTimeResult() {
 inline void ArraySorting::printReverseTimeResult() {
     cout << left << setw(20) << "| Reverse Time (ms)";
     for (double i: estimatedTimeForReversingSortedArr) {
-        cout << left << setw(2) <<  "| " << setw(10) << setprecision(6) << i;
+        cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
     cout << left << setw(1) << "|" << endl;
 }
