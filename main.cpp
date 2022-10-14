@@ -33,14 +33,29 @@
  * */
 using namespace std;
 
+/**
+ * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Author: Faisal Javed
+ * Date of Creation: 7th October, 2022
+ * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
+ *         @param [in] void
+ *         @return [out] void
+ *         @post Post Condition - displays a table in console.
+ * */
 void arraySortingModule(){
+    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting1 = ArraySorting(100000);
+    /// calling @a ArraySorting::display method to display the execution time of arrays
     arraySorting1.display();
 
+    /// creating an object of @class ArraySort using explicit constructor which takes an argument.
     ArraySorting arraySorting2 = ArraySorting(1000000);
+    /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting2.display();
 
+    /// creating an object of @class ArraySort using explicit constructor which takes an argument.
     ArraySorting arraySorting3 = ArraySorting(10000000);
+    /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting3.display();
 }
 
