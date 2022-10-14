@@ -17,15 +17,15 @@
 
 /**
  * @file arraySorting.h
- * @brief user-defined header file grades_section1.h to propagate declarations to code file.
+ * @brief user-defined header file section1/arraySorting.h.h to propagate declarations to code file.
  * */
-#include "arraySorting.h"
+#include "section1/arraySorting.h"
 
 /**
  * @file sin_cos.h
- * @brief user-defined header file grades_section1.h to propagate declarations to code file.
+ * @brief user-defined header file section2/sin_cos.h.h to propagate declarations to code file.
  * */
-#include "sin_cos.h"
+#include "section2/sin_cos.h"
 
 /**
  * 'namespace' is used to organise the names of program entities.
@@ -45,11 +45,7 @@ void arraySortingModule(){
 }
 
 void whiteBoxTesting(){
-    /*
- for our white box testing, we use different range of values to test
-     the outputs of the different functions
- */
-    //whitebox test cases
+
 
     int var1 = 30;
     int var2 = 60;
@@ -103,18 +99,27 @@ void whiteBoxTesting(){
 
 /*****************************
  * Module Names:
- *          1) Calculating Average score and Grades of Students.
- *          2) Calculating Average subject score and grades for every subject of every student.
+ *          1) Sorting array and calculating the random time, sorted time and reverse time.
+ *          2) White box testing of sines and cosines.
  * Author: Faisal Javed
- * Date of Creation: 23rd September, 2022
+ * Date of Creation: 7th October, 2022
  * Purpose: main() Function serves as the starting point for program execution.
  *          It has no arguments and returns 0 if the program is executed successfully.
  *          @param [in] void
  *          @return [out] int
  *          @post Post Condition - int is returned.
  ****************************/
-int main() {
-//    arraySortingModule();
-    whiteBoxTesting();
-    return 0;
-}
+int main() { /// opening brace - program execution starts here.
+
+    /**
+     * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+     * */
+    arraySortingModule(); /// calling function @fn arraySortingModule() to sort arrays.
+
+    /**
+    * Module Name: White box testing of sines and cosines.
+    * */
+    whiteBoxTesting(); /// calling function @fn whiteBoxTesting() to test sine and cosine using white box testing.
+
+    return 0; /// returns 0 if the program is executed successfully because main() has a return type of integer.
+} /// closing brace - program terminates here.
