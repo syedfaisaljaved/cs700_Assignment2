@@ -8,3 +8,5 @@ int cos(int x);
 int sin0to45(int);
 int sin45to90(int);
 int polyEval(int, int[], int);
+void testCosineValues(int &, int);
+void testSineValues(int &, int);

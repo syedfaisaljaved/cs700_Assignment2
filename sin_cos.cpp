@@ -1,5 +1,7 @@
 #include "sin_cos.h"
+#include <iostream>
 
+using namespace std;
 /** These functions compute the sine and cosine of an angle
     expressed in degrees. The result will be
     an integer representing the sine or cosine as
@@ -12,22 +14,19 @@
     @return The sine of x
 */
 int sin(int x) {
-  if (x < 0) {
-    x = -x;
-  }
-  x = x % 360;
-  if (0 <= x && x <= 45) {
-    return sin0to45(x);
-  }
-  else if (45 <= x && x <= 90) {
-    return sin45to90(x);
-  }
-  else if (90 <= x && x <= 180) {
-    return sin(180 - x);
-  }
-  else {
-    return -sin(x - 180);
-  }
+    if (x < 0) {
+        x = -x;
+    }
+    x = x % 360;
+    if (0 <= x && x <= 45) {
+        return sin0to45(x);
+    } else if (45 <= x && x <= 90) {
+        return sin45to90(x);
+    } else if (90 <= x && x <= 180) {
+        return sin(180 - x);
+    } else {
+        return -sin(x - 180);
+    }
 }
 
 /** Compute the cosine of an angle in degrees.
@@ -35,7 +34,7 @@ int sin(int x) {
     @return The cosine of x
 */
 int cos(int x) {
-  return sin(x + 90);
+    return sin(x + 90);
 }
 
 /** Compute the sine of an angle in degrees
@@ -45,11 +44,11 @@ int cos(int x) {
     @return The sine of x
 */
 int sin0to45(int x) {
-  // Code to compute sin(x) for x between 0 and 45 degrees
-  // Evaluate a polynomial optimized for this range.
-  int coef[] = {
-    -81, -277, 1747900, -1600};
-  return polyEval(x, coef, 4) / 10000;
+    // Code to compute sin(x) for x between 0 and 45 degrees
+    // Evaluate a polynomial optimized for this range.
+    int coef[] = {
+            -81, -277, 1747900, -1600};
+    return polyEval(x, coef, 4) / 10000;
 }
 
 /** Compute the sine of an angle in degrees
@@ -59,11 +58,11 @@ int sin0to45(int x) {
     @return The sine of x
 */
 int sin45to90(int x) {
-  // Code to compute sin(x) for x between 45 and 90 degrees
-  // Evaluate a polynomial optimized for this range.
-  int coef[] = {
-    336, -161420, 75484, 999960000};
-  return polyEval(90 - x, coef, 4) / 100000;
+    // Code to compute sin(x) for x between 45 and 90 degrees
+    // Evaluate a polynomial optimized for this range.
+    int coef[] = {
+            336, -161420, 75484, 999960000};
+    return polyEval(90 - x, coef, 4) / 100000;
 }
 
 /** Function to evaluate a polynomial
@@ -73,10 +72,32 @@ int sin45to90(int x) {
     @return x^n-1*coef[0] + x^n-2*coef[1] + ... x*coef[n-2] + coef[n-1]
 */
 int polyEval(int x, int coef[], int n) {
-  int result = 0;
-  for (int i = 0; i < n; i++) {
-    result *= x;
-    result += coef[i];
-  }
-  return result;
+    int result = 0;
+    for (int i = 0; i < n; i++) {
+        result *= x;
+        result += coef[i];
+    }
+    return result;
+}
+
+void testSineValues(int &passedValue, int expectedValue) {
+    int valueOfSine = sin(passedValue);
+    cout << "Value of sine: " << passedValue << " is: " << expectedValue << " and test value is: " << valueOfSine << endl;
+    if (valueOfSine == expectedValue) {
+        cout << "Test Case Result: Pass" << endl;
+    } else {
+        cout << "Test Case Result: Fail" << endl;
+    }
+    cout << endl;
+}
+
+void testCosineValues(int &value, int expectedValue) {
+    int valueOfCosine = cos(value);
+    cout << "Value of cosine: " << value << " is: " << expectedValue << " and test value is: " << valueOfCosine << endl;
+    if (valueOfCosine == expectedValue) {
+        cout << "Test Case Result: Pass" << endl;
+    } else {
+        cout << "Test Case Result: Fail" << endl;
+    }
+    cout << endl;
 }
