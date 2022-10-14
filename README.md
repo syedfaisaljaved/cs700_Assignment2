@@ -29,7 +29,5 @@
 ### Usage - 
 #### Running this program will test sine/cosine functions with different values using whitebox testing.
 ### Output - 
-1. File output
-    <br><br><img src="cs700-ass2-section-2-output.png"><br><br>
-2. [Output txt file](output_Grades_Section2.txt)
-Footer
+1. Console output
+    <br><br><img src="cs700-ass2-section-2-output.png" width="500">
