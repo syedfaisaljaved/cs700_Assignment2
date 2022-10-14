@@ -1,0 +1,381 @@
+\hypertarget{sin__cos_8h}{}\doxysection{section2/sin\+\_\+cos.h File Reference}
+\label{sin__cos_8h}\index{section2/sin\_cos.h@{section2/sin\_cos.h}}
+
+
+user-\/defined header file \mbox{\hyperlink{sin__cos_8h}{section2/sin\+\_\+cos.\+h}} to propagate declarations to code file.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sin__cos_8h_a13c31ca258a4339a1b0b21e6222b13dd}{sin}} (int)
+\item 
+int \mbox{\hyperlink{sin__cos_8h_a539ff788abfcbf98c54a12d14728b89b}{cos}} (int)
+\item 
+int \mbox{\hyperlink{sin__cos_8h_a4d34b419d8c18cff22ace1398020c66d}{sin0to45}} (int)
+\item 
+int \mbox{\hyperlink{sin__cos_8h_a743e8b258eaea56b82298767f7a38f49}{sin45to90}} (int)
+\item 
+int \mbox{\hyperlink{sin__cos_8h_a11f6c785fc4ec985678b2600033ff987}{poly\+Eval}} (int, int\mbox{[}$\,$\mbox{]}, int)
+\item 
+void \mbox{\hyperlink{sin__cos_8h_a5928a6a76206f12d7894f227692df4ba}{test\+Cosine\+Values}} (int \&, int)
+\item 
+void \mbox{\hyperlink{sin__cos_8h_a82b581f3023aabc3c6f08891e4a301a9}{test\+Sine\+Values}} (int \&, int)
+\item 
+void \mbox{\hyperlink{sin__cos_8h_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line}} ()
+\item 
+void \mbox{\hyperlink{sin__cos_8h_acf1f8b8ee7a3f49cd0665906e2d0551a}{print\+Table\+Header}} (std\+::string)
+\item 
+void \mbox{\hyperlink{sin__cos_8h_a6522e23cc8298f7c03062b16c9e6cc5d}{print\+Result}} (int \&, int \&, int \&, std\+::string \&, std\+::string)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+user-\/defined header file \mbox{\hyperlink{sin__cos_8h}{section2/sin\+\_\+cos.\+h}} to propagate declarations to code file. 
+
+library that controls reading from and writing to the standard streams. library which helps us in manipulating the output of the program. user-\/defined header to propagate declarations to code file. 
+
+Definition in file \mbox{\hyperlink{sin__cos_8h_source}{sin\+\_\+cos.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sin__cos_8h_a539ff788abfcbf98c54a12d14728b89b}\label{sin__cos_8h_a539ff788abfcbf98c54a12d14728b89b}} 
+\index{sin\_cos.h@{sin\_cos.h}!cos@{cos}}
+\index{cos@{cos}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{cos()}{cos()}}
+{\footnotesize\ttfamily int cos (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to Compute the cosine of an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+{\em int} & The angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cosine of x
+\end{DoxyReturn}
+Compute the cosine of an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cosine of x 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a11f6c785fc4ec985678b2600033ff987}\label{sin__cos_8h_a11f6c785fc4ec985678b2600033ff987}} 
+\index{sin\_cos.h@{sin\_cos.h}!polyEval@{polyEval}}
+\index{polyEval@{polyEval}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{polyEval()}{polyEval()}}
+{\footnotesize\ttfamily int poly\+Eval (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{coef\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to evaluate a polynomial 
+\begin{DoxyParams}{Parameters}
+{\em int} & The point at which the polynomial is to be evaulated \\
+\hline
+{\em int} & The array of coefficients \\
+\hline
+{\em int} & The number of coefficients (degree + 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x$^\wedge$n-\/1$\ast$coef\mbox{[}0\mbox{]} + x$^\wedge$n-\/2$\ast$coef\mbox{[}1\mbox{]} + ... x$\ast$coef\mbox{[}n-\/2\mbox{]} + coef\mbox{[}n-\/1\mbox{]}
+\end{DoxyReturn}
+Function to evaluate a polynomial 
+\begin{DoxyParams}{Parameters}
+{\em x} & The point at which the polynomial is to be evaulated \\
+\hline
+{\em coef} & The array of coefficients \\
+\hline
+{\em n} & The number of coefficients (degree + 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x$^\wedge$n-\/1$\ast$coef\mbox{[}0\mbox{]} + x$^\wedge$n-\/2$\ast$coef\mbox{[}1\mbox{]} + ... x$\ast$coef\mbox{[}n-\/2\mbox{]} + coef\mbox{[}n-\/1\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a829b2e0d39414bec7ee36cd9643cd464}\label{sin__cos_8h_a829b2e0d39414bec7ee36cd9643cd464}} 
+\index{sin\_cos.h@{sin\_cos.h}!printDashedLine@{printDashedLine}}
+\index{printDashedLine@{printDashedLine}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{printDashedLine()}{printDashedLine()}}
+{\footnotesize\ttfamily void print\+Dashed\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to print a line using \textquotesingle{}=\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ a line is printed
+\end{DoxyPostcond}
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function to print a line using \textquotesingle{}=\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ a line is printed 
+\end{DoxyPostcond}
+printing \textquotesingle{}=\textquotesingle{} to the console. using {\ttfamily endl} to go to next line.
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a6522e23cc8298f7c03062b16c9e6cc5d}\label{sin__cos_8h_a6522e23cc8298f7c03062b16c9e6cc5d}} 
+\index{sin\_cos.h@{sin\_cos.h}!printResult@{printResult}}
+\index{printResult@{printResult}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{printResult()}{printResult()}}
+{\footnotesize\ttfamily void print\+Result (\begin{DoxyParamCaption}\item[{int \&}]{,  }\item[{int \&}]{,  }\item[{int \&}]{,  }\item[{std\+::string \&}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to print test case result of sine/cosine in a formatted fashion. 
+\begin{DoxyParams}{Parameters}
+{\em passed\+Value} & \\
+\hline
+{\em value\+Of\+Sine\+Cosine} & \\
+\hline
+{\em expected\+Value} & \\
+\hline
+{\em result} & \\
+\hline
+{\em sine\+Cosine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ test case result is printed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{sin__cos_8h_acf1f8b8ee7a3f49cd0665906e2d0551a}\label{sin__cos_8h_acf1f8b8ee7a3f49cd0665906e2d0551a}} 
+\index{sin\_cos.h@{sin\_cos.h}!printTableHeader@{printTableHeader}}
+\index{printTableHeader@{printTableHeader}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{printTableHeader()}{printTableHeader()}}
+{\footnotesize\ttfamily void print\+Table\+Header (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to print the table header 
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ a table header is printed 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{sin__cos_8h_a13c31ca258a4339a1b0b21e6222b13dd}\label{sin__cos_8h_a13c31ca258a4339a1b0b21e6222b13dd}} 
+\index{sin\_cos.h@{sin\_cos.h}!sin@{sin}}
+\index{sin@{sin}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{sin()}{sin()}}
+{\footnotesize\ttfamily int sin (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to Compute the sine of an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+{\em int} & The angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x
+\end{DoxyReturn}
+These functions compute the sine and cosine of an angle expressed in degrees. The result will be an integer representing the sine or cosine as ten-\/thousandths. For example, a result of 7071 represents 7071e-\/4 or 0.\+7071. Compute the sine of an angle in degrees. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a4d34b419d8c18cff22ace1398020c66d}\label{sin__cos_8h_a4d34b419d8c18cff22ace1398020c66d}} 
+\index{sin\_cos.h@{sin\_cos.h}!sin0to45@{sin0to45}}
+\index{sin0to45@{sin0to45}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{sin0to45()}{sin0to45()}}
+{\footnotesize\ttfamily int sin0to45 (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to Compute the sine of an angle in degrees between 0 and 45. 
+\begin{DoxyParams}{Parameters}
+{\em int} & The angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\+: Pre Condition -\/ 0 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} 45
+\end{DoxyPrecond}
+Compute the sine of an angle in degrees between 0 and 45. pre\+: 0 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} 45 
+\begin{DoxyParams}{Parameters}
+{\em x} & The angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a743e8b258eaea56b82298767f7a38f49}\label{sin__cos_8h_a743e8b258eaea56b82298767f7a38f49}} 
+\index{sin\_cos.h@{sin\_cos.h}!sin45to90@{sin45to90}}
+\index{sin45to90@{sin45to90}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{sin45to90()}{sin45to90()}}
+{\footnotesize\ttfamily int sin45to90 (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype to Compute the sine of an angle in degrees between 45 and 90. 
+\begin{DoxyParams}{Parameters}
+{\em int} & The angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\+: Pre Condition -\/ 45 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<}= 90
+\end{DoxyPrecond}
+Compute the sine of an angle in degrees between 45 and 90. pre\+: 45 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<}= 90 
+\begin{DoxyParams}{Parameters}
+{\em x} & The angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sine of x 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a5928a6a76206f12d7894f227692df4ba}\label{sin__cos_8h_a5928a6a76206f12d7894f227692df4ba}} 
+\index{sin\_cos.h@{sin\_cos.h}!testCosineValues@{testCosineValues}}
+\index{testCosineValues@{testCosineValues}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{testCosineValues()}{testCosineValues()}}
+{\footnotesize\ttfamily void test\+Cosine\+Values (\begin{DoxyParamCaption}\item[{int \&}]{passed\+Value,  }\item[{int}]{expected\+Value }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype white box test the values of sines. 
+\begin{DoxyParams}{Parameters}
+{\em int} & \\
+\hline
+{\em int} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Pre Condition -\/ 2 int are passed. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ result table is printed
+\end{DoxyPostcond}
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function white box test the values of cosines. 
+\begin{DoxyParams}{Parameters}
+{\em passed\+Value} & \\
+\hline
+{\em expected\+Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Pre Condition -\/ 2 int are passed. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ result table is printed 
+\end{DoxyPostcond}
+storing the value of sin for the passed value in {\ttfamily value\+Of\+Cosine} 
+
+declaring a string {\ttfamily result} to store the result after white box testing
+
+store the value PASS if the if condition is true
+
+else store the value FAIL if the if condition is false
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a3520230653bcebae3b66967de48332a3}{print\+Table\+Header()}} to print header for cosine.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a01d952f8dcbc2387b632253d82d6e641}{print\+Result()}} to print the result of whitebox testing.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+using {\ttfamily endl} to go to next line.
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+
+\mbox{\Hypertarget{sin__cos_8h_a82b581f3023aabc3c6f08891e4a301a9}\label{sin__cos_8h_a82b581f3023aabc3c6f08891e4a301a9}} 
+\index{sin\_cos.h@{sin\_cos.h}!testSineValues@{testSineValues}}
+\index{testSineValues@{testSineValues}!sin\_cos.h@{sin\_cos.h}}
+\doxysubsubsection{\texorpdfstring{testSineValues()}{testSineValues()}}
+{\footnotesize\ttfamily void test\+Sine\+Values (\begin{DoxyParamCaption}\item[{int \&}]{passed\+Value,  }\item[{int}]{expected\+Value }\end{DoxyParamCaption})}
+
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function prototype white box test the values of cosines. 
+\begin{DoxyParams}{Parameters}
+{\em int} & \\
+\hline
+{\em int} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Pre Condition -\/ 2 int are passed. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ result table is printed
+\end{DoxyPostcond}
+Module Name\+: White box testing of sines and cosines. Author\+: Faisal Javed Date of Creation\+: 7th October, 2022 Purpose\+: function white box test the values of sines. 
+\begin{DoxyParams}{Parameters}
+{\em passed\+Value} & \\
+\hline
+{\em expected\+Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Pre Condition -\/ 2 int are passed. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Post Condition -\/ result table is printed 
+\end{DoxyPostcond}
+storing the value of sin for the passed value in {\ttfamily value\+Of\+Sine} 
+
+declaring a string {\ttfamily result} to store the result after white box testing
+
+store the value PASS if the if condition is true
+
+else store the value FAIL if the if condition is false
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a3520230653bcebae3b66967de48332a3}{print\+Table\+Header()}} to print header for sine.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a01d952f8dcbc2387b632253d82d6e641}{print\+Result()}} to print the result of whitebox testing.
+
+calling function \mbox{\hyperlink{sin__cos_8cpp_a829b2e0d39414bec7ee36cd9643cd464}{print\+Dashed\+Line()}} to print dashed line.
+
+using {\ttfamily endl} to go to next line.
+
+Definition at line \mbox{\hyperlink{sin__cos_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{sin__cos_8cpp_source}{sin\+\_\+cos.\+cpp}}.
+

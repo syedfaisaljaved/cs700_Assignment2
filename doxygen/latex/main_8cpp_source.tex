@@ -1,0 +1,103 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 \textcolor{comment}{/*****************************}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{comment}{ * @name Module Name: 1) Execution time for sorting random, sorted and reversed arrays.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{comment}{ *          2) White box testing of sines and cosines.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{comment}{ * @author Faisal Javed}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{comment}{ * @date 7th October, 2022}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{comment}{ * Purpose: CS-\/700 Assignment 2}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{comment}{ * Student ID: 200491169}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{comment}{ ****************************/}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <iostream>} }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{array_sorting_8h}{section1/arraySorting.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sin__cos_8h}{section2/sin\_cos.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045 \textcolor{keywordtype}{void} arraySortingModule()\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047     \mbox{\hyperlink{class_array_sorting}{ArraySorting}} arraySorting1 = \mbox{\hyperlink{class_array_sorting}{ArraySorting}}(100000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     arraySorting1.\mbox{\hyperlink{class_array_sorting_a6c9bb26cbaa7af39971f202550726118}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052     \mbox{\hyperlink{class_array_sorting}{ArraySorting}} arraySorting2 = \mbox{\hyperlink{class_array_sorting}{ArraySorting}}(1000000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054     arraySorting2.\mbox{\hyperlink{class_array_sorting_a6c9bb26cbaa7af39971f202550726118}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     \mbox{\hyperlink{class_array_sorting}{ArraySorting}} arraySorting3 = \mbox{\hyperlink{class_array_sorting}{ArraySorting}}(10000000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     arraySorting3.\mbox{\hyperlink{class_array_sorting_a6c9bb26cbaa7af39971f202550726118}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071 \textcolor{keywordtype}{void} whiteBoxTesting()\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077     \textcolor{keywordtype}{int} var1 = 30; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078     \textcolor{keywordtype}{int} var2 = 60; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079     \textcolor{keywordtype}{int} var3 = 100; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080     \textcolor{keywordtype}{int} var4 = 90; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081     \textcolor{keywordtype}{int} var5 = 45; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082     \textcolor{keywordtype}{int} var6 = -\/240; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083     \textcolor{keywordtype}{int} var7 = 360; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084     \textcolor{keywordtype}{int} var8 = 67; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085     \textcolor{keywordtype}{int} var9 = 92; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086     \textcolor{keywordtype}{int} var10 = -\/28; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087     \textcolor{keywordtype}{int} var11 = 40; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088     \textcolor{keywordtype}{int} var12 = 12; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089     \textcolor{keywordtype}{int} var13 = 270; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090     \textcolor{keywordtype}{int} var14 = -\/25; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091     \textcolor{keywordtype}{int} var15 = -\/30; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092     \textcolor{keywordtype}{int} var16 = -\/270; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093     \textcolor{keywordtype}{int} var17 = -\/180; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var1, 4999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var2, 8660); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var3, 9849); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var4, 9999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var6, 8660); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var5, 7071); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var7, 0); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var12, 2079); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var13, -\/9999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var15, -\/4999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var16, -\/9999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107     \mbox{\hyperlink{sin__cos_8cpp_ad761958f58362f38970658fef49081b7}{testSineValues}}(var17, 0); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109     cout << endl; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var1, 8660); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var2, 4999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var8, 3906); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var12, 9782); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var14, 9062); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var9, -\/349); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var11, 7662); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var10, 8828); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var6, -\/4999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var15, 8660); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var16, 0); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123     \mbox{\hyperlink{sin__cos_8cpp_abd83f41935528e5d8938bf35f3038dab}{testCosineValues}}(var17, -\/9999); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126 \textcolor{comment}{/*****************************}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127 \textcolor{comment}{ * Module Names:}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128 \textcolor{comment}{ *          1) Execution time for sorting random, sorted and reversed arrays.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129 \textcolor{comment}{ *          2) White box testing of sines and cosines.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130 \textcolor{comment}{ * Author: Faisal Javed}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131 \textcolor{comment}{ * Date of Creation: 7th October, 2022}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132 \textcolor{comment}{ * Purpose: main() Function serves as the starting point for program execution.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133 \textcolor{comment}{ *          It has no arguments and returns 0 if the program is executed successfully.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134 \textcolor{comment}{ *          @param [in] void}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135 \textcolor{comment}{ *          @return [out] int}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00136}00136 \textcolor{comment}{ *          @post Post Condition -\/ int is returned.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00137}00137 \textcolor{comment}{ ****************************/}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00138}00138 \textcolor{keywordtype}{int} \mbox{\hyperlink{_c_make_c_compiler_id_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}() \{ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00143}00143     arraySortingModule(); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00148}00148     whiteBoxTesting(); }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00150}00150     \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00151}00151 \} }
+
+\end{DoxyCode}

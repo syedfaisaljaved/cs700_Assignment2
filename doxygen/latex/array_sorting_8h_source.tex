@@ -1,0 +1,43 @@
+\hypertarget{array_sorting_8h_source}{}\doxysection{array\+Sorting.\+h}
+\label{array_sorting_8h_source}\index{section1/arraySorting.h@{section1/arraySorting.h}}
+\mbox{\hyperlink{array_sorting_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00001}00001 \textcolor{comment}{/*****************************}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00002}00002 \textcolor{comment}{ * @name Module Name: Execution time for sorting random, sorted and reversed arrays.}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00003}00003 \textcolor{comment}{ * @author Faisal Javed}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00004}00004 \textcolor{comment}{ * @date 7th October, 2022}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00005}00005 \textcolor{comment}{ * Purpose: CS-\/700 Assignment 2}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00006}00006 \textcolor{comment}{ * Student ID: 200491169}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00007}00007 \textcolor{comment}{ ****************************/}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00014}00014 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00044}\mbox{\hyperlink{class_array_sorting}{00044}} \textcolor{keyword}{class }\mbox{\hyperlink{class_array_sorting}{ArraySorting}} \{}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00045}00045 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00049}\mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{00049}}     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{NUMBER\_OF\_ARRAYS}} = 10;}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00053}\mbox{\hyperlink{class_array_sorting_aa4b35dc5964b16c4f3e2e8df02290d0c}{00053}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_sorting_aa4b35dc5964b16c4f3e2e8df02290d0c}{SIZE\_OF\_2D\_ARRAY}};}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00057}\mbox{\hyperlink{class_array_sorting_a0399ce67c5ccbd650d564d0853aac532}{00057}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_array_sorting_a0399ce67c5ccbd650d564d0853aac532}{estimatedTimeForSortingRandomArr}}[\mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{NUMBER\_OF\_ARRAYS}}]\{\};}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00061}\mbox{\hyperlink{class_array_sorting_a9bd23cb0fc343bf0f0917044ecebe7bf}{00061}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_array_sorting_a9bd23cb0fc343bf0f0917044ecebe7bf}{estimatedTimeForSortingSortedArr}}[\mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{NUMBER\_OF\_ARRAYS}}]\{\};}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00065}\mbox{\hyperlink{class_array_sorting_a4c57b6afa16902cabd67ded5479f76bd}{00065}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_array_sorting_a4c57b6afa16902cabd67ded5479f76bd}{estimatedTimeForReversingSortedArr}}[\mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{NUMBER\_OF\_ARRAYS}}]\{\};}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00072}\mbox{\hyperlink{class_array_sorting_abfd380333c81419b601b0788d381e809}{00072}}     \textcolor{keywordtype}{int} **\mbox{\hyperlink{class_array_sorting_abfd380333c81419b601b0788d381e809}{array}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int} * [\mbox{\hyperlink{class_array_sorting_af73d20b81960e79aecff6152a425bfcb}{NUMBER\_OF\_ARRAYS}}];}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00076}00076     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a2f259297d433583cfda03666ce259cd1}{createRandomIntArray}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00083}00083     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a69b27011bf530bd692dad8914ecd2241}{mergeSortArray}}(\textcolor{keywordtype}{int} [], \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00091}00091     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a4ef09bda53536503843a499ef4f7d6a7}{mergeSubArrays}}(\textcolor{keywordtype}{int} [], \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&);}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00099}00099     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a640a1b9412b5ccff6055db4d99381dfb}{copyNewArrayIntoOriginalArray}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} [], \textcolor{keywordtype}{int} [], \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} , \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00105}00105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a296816d01da473c751def5e504a77149}{swap}}(\textcolor{keywordtype}{int} \&, \textcolor{keywordtype}{int} \&);}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00109}00109     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a2ecf77c659e999d44e5dd35509a06009}{printDoubleDivider}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00113}00113     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a5043388f29a41985b0091b51fdcca8a8}{printDivider}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00117}00117     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_ad59aaf5e6e25aa7a062332bbe014e693}{printHeader}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00121}00121     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_ae12e4094eee6e346d36e0c1531a448a9}{printRandomTimeResult}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00125}00125     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a50fb73f530049b99c974707eb280f7ee}{printSortedTimeResult}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00129}00129     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_aca24dbafc5f43fc753179f3ee099e0af}{printReverseTimeResult}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00133}00133     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a79fc415a0a9c4dc8f026046f2e5cc062}{printArraySize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00137}00137     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a2c71b215ffa269b14350f7f5253df670}{sortArray}}(\textcolor{keywordtype}{double} timeArray[]);}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00141}00141     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a4b443ae3803701cd08c16aca932eb5b7}{reverseSortedArray}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00143}00143 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00148}00148     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_array_sorting}{ArraySorting}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00152}00152     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_sorting_a6c9bb26cbaa7af39971f202550726118}{display}}();}
+\DoxyCodeLine{\Hypertarget{array_sorting_8h_source_l00153}00153 \};}
+
+\end{DoxyCode}

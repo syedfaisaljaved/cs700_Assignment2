@@ -17,13 +17,13 @@
 
 /**
  * @file arraySorting.h
- * @brief user-defined header file section1/arraySorting.h.h to propagate declarations to code file.
+ * @brief user-defined header file section1/arraySorting.h to propagate declarations to code file.
  * */
 #include "section1/arraySorting.h"
 
 /**
  * @file sin_cos.h
- * @brief user-defined header file section2/sin_cos.h.h to propagate declarations to code file.
+ * @brief user-defined header file section2/sin_cos.h to propagate declarations to code file.
  * */
 #include "section2/sin_cos.h"
 
@@ -48,12 +48,12 @@ void arraySortingModule(){
     /// calling @a ArraySorting::display method to display the execution time of arrays
     arraySorting1.display();
 
-    /// creating an object of @class ArraySort using explicit constructor which takes an argument.
+    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting2 = ArraySorting(1000000);
     /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting2.display();
 
-    /// creating an object of @class ArraySort using explicit constructor which takes an argument.
+    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting3 = ArraySorting(10000000);
     /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting3.display();
