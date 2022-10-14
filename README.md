@@ -24,8 +24,8 @@
 <br><br>
 ### 3. Module 2 - White box testing of sines and cosines.
 #### Contents - 
-1. [Grades Section 2 CPP File](grades_section2.cpp)
-2. [Grades Section 2 Header File](grades_section2.h)
+1. [Sin Cos Section 2 CPP File](sin_cos.cpp)
+2. [Sin Cos Section 2 Header File](sin_cos.h)
 ### Usage - 
 #### Running this program will test sine/cosine functions with different values using whitebox testing.
 ### Output - 
