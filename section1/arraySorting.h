@@ -1,5 +1,5 @@
 /*****************************
- * @name Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * @name Module Name: Execution time for sorting random, sorted and reversed arrays.
  * @author Faisal Javed
  * @date 7th October, 2022
  * Purpose: CS-700 Assignment 2
@@ -14,7 +14,7 @@
 #pragma once
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Class is a user-defined data type, which holds its own data members and member functions,

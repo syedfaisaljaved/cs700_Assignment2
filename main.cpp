@@ -1,5 +1,5 @@
 /*****************************
- * @name Module Name: 1) Sorting array and calculating the random time, sorted time and reverse time.
+ * @name Module Name: 1) Execution time for sorting random, sorted and reversed arrays.
  *          2) White box testing of sines and cosines.
  * @author Faisal Javed
  * @date 7th October, 2022
@@ -34,7 +34,7 @@
 using namespace std;
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
@@ -125,7 +125,7 @@ void whiteBoxTesting(){
 
 /*****************************
  * Module Names:
- *          1) Sorting array and calculating the random time, sorted time and reverse time.
+ *          1) Execution time for sorting random, sorted and reversed arrays.
  *          2) White box testing of sines and cosines.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
@@ -138,7 +138,7 @@ void whiteBoxTesting(){
 int main() { /// opening brace - program execution starts here.
 
     /**
-     * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+     * Module Name: Execution time for sorting random, sorted and reversed arrays.
      * */
     arraySortingModule(); /// calling function @fn arraySortingModule() to sort arrays.
 

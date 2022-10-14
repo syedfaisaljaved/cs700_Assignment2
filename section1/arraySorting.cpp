@@ -1,5 +1,5 @@
 /*****************************
- * @name Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * @name Module Name: Execution time for sorting random, sorted and reversed arrays.
  * @author Faisal Javed
  * @date 7th October, 2022
  * Purpose: CS-700 Assignment 2
@@ -24,7 +24,7 @@ using namespace std;
 using namespace std::chrono;
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
@@ -45,7 +45,7 @@ void ArraySorting::createRandomIntArray() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Explicit Constructor to create an object of @class ArraySorting
@@ -71,7 +71,7 @@ ArraySorting::ArraySorting(int size) {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to sort array using merge sort algorithm.
@@ -116,7 +116,7 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to merge the sorted arrays.
@@ -190,7 +190,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to copy the values of an array to another array
@@ -210,7 +210,7 @@ void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int origi
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to sort the array by calling merge sort algorithm and
@@ -239,7 +239,7 @@ void ArraySorting::sortArray(double timeArray[]) {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to reverse the an array.
@@ -262,7 +262,7 @@ void ArraySorting::reverseSortedArray() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to swap the values.
@@ -278,7 +278,7 @@ void ArraySorting::swap(int &firstValue, int &secondValue) {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: Method to display a table of execution time of each array for random, sorted and reverse time in a well formatted fashion.
@@ -310,7 +310,7 @@ void ArraySorting::display() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print a divider line.
@@ -327,7 +327,7 @@ inline void ArraySorting::printDoubleDivider() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print a divider line.
@@ -344,7 +344,7 @@ inline void ArraySorting::printDivider() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print a table header.
@@ -380,7 +380,7 @@ inline void ArraySorting::printHeader() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print execution time for random array sorting.
@@ -416,7 +416,7 @@ inline void ArraySorting::printRandomTimeResult() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print execution time for sorted array sorting.
@@ -453,7 +453,7 @@ inline void ArraySorting::printSortedTimeResult() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print execution time for reversed array sorting.
@@ -490,7 +490,7 @@ inline void ArraySorting::printReverseTimeResult() {
 }
 
 /**
- * Module Name: Sorting array and calculating the random time, sorted time and reverse time.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.
  * Author: Faisal Javed
  * Date of Creation: 7th October, 2022
  * Purpose: inline Method to print array size.
