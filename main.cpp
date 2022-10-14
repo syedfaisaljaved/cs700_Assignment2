@@ -54,37 +54,50 @@ void whiteBoxTesting(){
     int var1 = 30;
     int var2 = 60;
     int var3 = 100;
-    int var5 = 90;
-    int var7 = 45;
-    int var9 = -240;
-    int var10 = 360;
-    int var11 = 67;
-    int var12 = 92;
-    int var13 = -28;
-    int var14 = 40;
-    int var15 = 12;
-    int var16 = -25.00;
+    int var4 = 90;
+    int var5 = 45;
+    int var6 = -240;
+    int var7 = 360;
+    int var8 = 67;
+    int var9 = 92;
+    int var10 = -28;
+    int var11 = 40;
+    int var12 = 12;
+    int var13 = 270;
+    int var14 = -25;
+    int var15 = -30;
+    int var16 = -270;
+    int var17 = -180;
 
     //testing sines
     testSineValues(var1, 4999);
+    testSineValues(var2, 8660);
     testSineValues(var3, 9849);
-    testSineValues(var5, 9999);
-    testSineValues(var9, 8660);
-    testSineValues(var7, 7071);
-    testSineValues(var10, 0);
-    testSineValues(var15, 2079);
+    testSineValues(var4, 9999);
+    testSineValues(var6, 8660);
+    testSineValues(var5, 7071);
+    testSineValues(var7, 0);
+    testSineValues(var12, 2079);
+    testSineValues(var13, -9999);
+    testSineValues(var15, -4999);
+    testSineValues(var16, -9999);
+    testSineValues(var17, 0);
+
+    cout << endl;
+
     //testing cosines
     testCosineValues(var1, 8660);
     testCosineValues(var2, 4999);
-    testCosineValues(var11, 3906);
-    testCosineValues(var15, 9782);
-    testCosineValues(var16, 9062);
-    testCosineValues(var12, -349);
-    testCosineValues(var14, 7662);
-    testCosineValues(var13, 8828);
-    testCosineValues(var9, -4999);
-
-//    cout << cos(-240);
+    testCosineValues(var8, 3906);
+    testCosineValues(var12, 9782);
+    testCosineValues(var14, 9062);
+    testCosineValues(var9, -349);
+    testCosineValues(var11, 7662);
+    testCosineValues(var10, 8828);
+    testCosineValues(var6, -4999);
+    testCosineValues(var15, 8660);
+    testCosineValues(var16, 0);
+    testCosineValues(var17, -9999);
 
 }
 
@@ -101,7 +114,7 @@ void whiteBoxTesting(){
  *          @post Post Condition - int is returned.
  ****************************/
 int main() {
-    arraySortingModule();
+//    arraySortingModule();
     whiteBoxTesting();
     return 0;
 }

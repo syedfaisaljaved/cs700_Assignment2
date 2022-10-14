@@ -1,5 +1,6 @@
 #include "sin_cos.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 /** These functions compute the sine and cosine of an angle
@@ -82,22 +83,52 @@ int polyEval(int x, int coef[], int n) {
 
 void testSineValues(int &passedValue, int expectedValue) {
     int valueOfSine = sin(passedValue);
-    cout << "Value of sine: " << passedValue << " is: " << expectedValue << " and test value is: " << valueOfSine << endl;
+    string result;
     if (valueOfSine == expectedValue) {
-        cout << "Test Case Result: Pass" << endl;
+        result = "PASS";
     } else {
-        cout << "Test Case Result: Fail" << endl;
+        result = "FAIL";
     }
+
+    printDashedLine();
+    printTableHeader("Sine");
+    printDashedLine();
+    printResult(passedValue, valueOfSine, expectedValue, result, "Sine");
+    printDashedLine();
     cout << endl;
 }
 
-void testCosineValues(int &value, int expectedValue) {
-    int valueOfCosine = cos(value);
-    cout << "Value of cosine: " << value << " is: " << expectedValue << " and test value is: " << valueOfCosine << endl;
+void testCosineValues(int &passedValue, int expectedValue) {
+    int valueOfCosine = cos(passedValue);
+    string result;
     if (valueOfCosine == expectedValue) {
-        cout << "Test Case Result: Pass" << endl;
+        result = "PASS";
     } else {
-        cout << "Test Case Result: Fail" << endl;
+        result = "FAIL";
     }
+
+    printDashedLine();
+    printTableHeader("Cosine");
+    printDashedLine();
+    printResult(passedValue, valueOfCosine, expectedValue, result, "Cosine");
+    printDashedLine();
     cout << endl;
+}
+
+inline void printDashedLine() {
+    cout << "=============================================================" << endl;
+}
+
+inline void printTableHeader(string sineCosine) {
+    cout << left << setw(17) << "| " + sineCosine + " Value " << setw(17) << "| Test Value " << setw(17)
+         << "| Actual Value "
+         << setw(17) << "| Result |" << endl;
+}
+
+inline void
+printResult(int &passedValue, int &valueOfSineCosine, int &expectedValue, string &result, string sineCosine) {
+    cout << left << setw(17) << "| " + sineCosine + "(" + to_string(passedValue) + ")" << setw(17)
+         << "| " + to_string(valueOfSineCosine) << setw(17) << "| " +
+                                                               to_string(expectedValue) << setw(17)
+         << "| " + result + "   |" << endl;
 }
