@@ -13,7 +13,7 @@
  * It read the program before it is compiled and executes only those lines which starts with '#'
  * */
 
-#include <iostream>
+#include <iostream> /// library that controls reading from and writing to the standard streams.
 
 /**
  * @file arraySorting.h
