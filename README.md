@@ -13,8 +13,8 @@
 <br><br>
 ### 2. Module 1 - Execution time for sorting random, sorted and reversed arrays.
 #### Contents - 
-1. [Array Sorting Execution Time Section 1 CPP File](arraySorting.cpp)
-2. [Array Sorting Execution Time Section 1 Header File](arraySorting.h)
+1. [Array Sorting Execution Time Section 1 CPP File](section1/arraySorting.cpp)
+2. [Array Sorting Execution Time Section 1 Header File](section1/arraySorting.h)
 ### Usage - 
 #### Running this program to calculate the execution time for sorting random, sorted and reversed arrays.
 ### Output - 
@@ -24,8 +24,8 @@
 <br><br>
 ### 3. Module 2 - White box testing of sines and cosines.
 #### Contents - 
-1. [Sin Cos Section 2 CPP File](sin_cos.cpp)
-2. [Sin Cos Section 2 Header File](sin_cos.h)
+1. [Sin Cos Section 2 CPP File](section2/sin_cos.cpp)
+2. [Sin Cos Section 2 Header File](section2/sin_cos.h)
 ### Usage - 
 #### Running this program will test sine/cosine functions with different values using whitebox testing.
 ### Output - 
