@@ -1,22 +1,22 @@
 /*****************************
- * @name Module Name: Execution time for sorting random, sorted and reversed arrays.
- * @author Faisal Javed
- * @date 7th October, 2022
- * Purpose: CS-700 Assignment 2
- * Student ID: 200491169
+ * @name Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * @author Faisal Javed <br>
+ * @date 7th October, 2022 <br>
+ * Purpose: CS-700 Assignment 2 <br>
+ * Student ID: 200491169 <br>
  ****************************/
 
 /**
-  * Code placed here is included only once per translation unit.
-  * '#pragma once' is non-standard preprocessor directive intended for implementing compiler-specific preprocessor instructions.
-  * It's purpose is to replace the include guards that you use in header files to avoid multiple inclusion.
+  * Code placed here is included only once per translation unit. <br>
+  * '#pragma once' is non-standard preprocessor directive intended for implementing compiler-specific preprocessor instructions. <br>
+  * It's purpose is to replace the include guards that you use in header files to avoid multiple inclusion. <br>
   * */
 #pragma once
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
+ * <br><br> Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
  * Purpose: Class is a user-defined data type, which holds its own data members and member functions,
  *          which can be accessed and used by creating an instance of that class.
  *          Defining @class ArraySorting which contains variables, methods and constructors.
@@ -76,31 +76,18 @@ private:
     void createRandomIntArray();
     /**
      * @brief method taking taking 3 params
-     * @param [in] int[]
-     * @param [in] unsigned int
-     * @param [in] unsigned int
      * */
     void mergeSortArray(int [], unsigned int, unsigned int);
     /**
      * @brief method taking taking 4 params
-     * @param [in] int[]
-     * @param [in] unsigned int
-     * @param [in] unsigned int
-     * @param [in] unsigned int
      * */
     void mergeSubArrays(int [], unsigned int &, unsigned int &, unsigned int &);
     /**
      * @brief method taking taking 4 params
-     * @param [in] int[]
-     * @param [in] int[]
-     * @param [in] unsigned int
-     * @param [in] unsigned int
      * */
     void copyNewArrayIntoOriginalArray(const int [], int [], unsigned int , unsigned int);
     /**
      * @brief method taking taking 2 params
-     * @param [in] int
-     * @param [in] int
      * */
     void swap(int &, int &);
     /**
@@ -144,6 +131,9 @@ public:
     /**
      * @brief explicit Constructor taking 1 param
      * @param [in] int
+     * @return [out] void
+     * @pre Pre Condition - an integer is passed
+     * @post Post Condition - various operations are performed on a array of size N.
      * */
     explicit ArraySorting(int);
     /**

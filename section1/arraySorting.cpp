@@ -1,33 +1,49 @@
 /*****************************
- * @name Module Name: Execution time for sorting random, sorted and reversed arrays.
- * @author Faisal Javed
- * @date 7th October, 2022
- * Purpose: CS-700 Assignment 2
- * Student ID: 200491169
+ * @name Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * @author Faisal Javed <br>
+ * @date 7th October, 2022 <br>
+ * Purpose: CS-700 Assignment 2 <br>
+ * Student ID: 200491169 <br>
  ****************************/
 
-#include <iostream> /// library that controls reading from and writing to the standard streams.
-#include <chrono> /// A framework that relates a time point to real physical time. The library provides at least three clocks that provide means to express the current time.
-#include <cstdlib> /// library that offers reliable and efficient functions for dynamic memory allocation, conversion between datatypes, pseudo-random number generation, process control, searching and sorting, math, and multibyte or wide characters.
-#include <iomanip> /// library which helps us in manipulating the output of the program.
-#include "arraySorting.h" /// user-defined header @file arraySorting.h to propagate declarations to code file.
+#include <iostream> /// library that controls reading from and writing to the standard streams. <br>
+#include <chrono> /// A framework that relates a time point to real physical time. The library provides at least three clocks that provide means to express the current time.  <br>
+#include <cstdlib> /// library that offers reliable and efficient functions for dynamic memory allocation, conversion between datatypes, pseudo-random number generation, process control, searching and sorting, math, and multibyte or wide characters. <br>
+#include <iomanip> /// library which helps us in manipulating the output of the program. <br>
+#include "arraySorting.h" /// user-defined header @file arraySorting.h to propagate declarations to code file. <br>
 
 /**
- * 'namespace' is used to organise the names of program entities.
- * The below statement declares that program will be accessing entities whose name are the part of namespace called std.
+ * 'namespace' is used to organise the names of program entities. <br>
+ * The below statement declares that program will be accessing entities whose name are the part of namespace called std. <br>
  * */
 using namespace std;
 /**
- * 'namespace' is used to organise the names of program entities.
- * The below statement declares that program will be accessing entities whose name are the part of namespace called std::chrono.
+ * 'namespace' is used to organise the names of program entities. <br>
+ * The below statement declares that program will be accessing entities whose name are the part of namespace called std::chrono. <br>
  * */
 using namespace std::chrono;
 
+ArraySorting::ArraySorting(int size) {
+    SIZE_OF_2D_ARRAY = size; /// variable @a ArraySorting::SIZE_OF_2D_ARRAY is initialized value passed in the constructor.
+    /**
+     * The pseudo-random number generator is initialized using the argument passed as seed. <br>
+     * For every different seed value used in a call to srand, the pseudo-random number generator can be expected to generate
+     * a different succession of results in the subsequent calls to rand.
+     * passed time(0) function that returns the current time in seconds. <br>
+     * */
+    srand(time(0));
+    createRandomIntArray(); /// @a createRandomIntArray() function call to create an array with random numbers.
+    sortArray(estimatedTimeForSortingRandomArr); /// @a sortArray() function call to sort the array and calculate the execution time for sorting random array.
+    sortArray(estimatedTimeForSortingSortedArr); /// @a sortArray() function call to sort the array and calculate the execution time for sorting sorted array.
+    reverseSortedArray(); /// @a reverseSortedArray() function call to reverse the array.
+    sortArray(estimatedTimeForReversingSortedArr); /// @a sortArray() function call to sort the array and calculate the execution time for sorting reversed array.
+}
+
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY. <br>
  *         @param [in,out] void
  *         @return [out] void
  *         @post Post Condition - a 2D int pointer array is initialized with random values.
@@ -45,37 +61,11 @@ void ArraySorting::createRandomIntArray() {
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Explicit Constructor to create an object of @class ArraySorting
- *         @param [in] int
- *         @return [out] void
- *         @pre Pre Condition - an integer is passed
- *         @post Post Condition - various operations are performed on a array of size N.
- * */
-ArraySorting::ArraySorting(int size) {
-    SIZE_OF_2D_ARRAY = size; /// variable @var SIZE_OF_2D_ARRAY is initialized value passed in the constructor.
-    /**
-     * /// The pseudo-random number generator is initialized using the argument passed as seed.
-     * For every different seed value used in a call to srand, the pseudo-random number generator can be expected to generate
-     * a different succession of results in the subsequent calls to rand.
-     * passed time(0) function that returns the current time in seconds.
-     * */
-    srand(time(0));
-    createRandomIntArray(); /// function call to create an array with random numbers.
-    sortArray(estimatedTimeForSortingRandomArr); /// function call to sort the array and calculate the execution time for sorting random array.
-    sortArray(estimatedTimeForSortingSortedArr); /// function call to sort the array and calculate the execution time for sorting sorted array.
-    reverseSortedArray(); /// function call to reverse the array.
-    sortArray(estimatedTimeForReversingSortedArr); /// function call to sort the array and calculate the execution time for sorting reversed array.
-}
-
-/**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to sort array using merge sort algorithm.
- * The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to sort array using merge sort algorithm. <br>
+ * The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. <br>
  *         @param [in] subArray
  *         @param [in] leftIndex
  *         @param [in] rightIndex
@@ -94,32 +84,32 @@ void ArraySorting::mergeSortArray(int subArray[], unsigned int leftIndex, unsign
     } /// @endif
 
     /**
-     * assign value to @c middleIndex by subtracting @c leftIndex from @c rightIndex then dividing by 2 and then adding it to @c leftIndex.
+     * assign value to @c middleIndex by subtracting @c leftIndex from @c rightIndex then dividing by 2 and then adding it to @c leftIndex. <br>
      * */
     unsigned int middleIndex = leftIndex + (rightIndex - leftIndex) / 2;
     /**
      * recursion call to @a ArraySorting::mergeSortArray
-     * takes @c array, @c leftIndex, and @c middleIndex as arguments.
+     * takes @c array, @c leftIndex, and @c middleIndex as arguments. <br>
      * */
     mergeSortArray(subArray, leftIndex, middleIndex);
     /**
      * recursion call to @a ArraySorting::mergeSortArray
-     * takes @c array, @c middleIndex+1, and @c rightIndex as arguments.
+     * takes @c array, @c middleIndex+1, and @c rightIndex as arguments. <br>
      * */
     mergeSortArray(subArray, middleIndex + 1, rightIndex);
     /**
      * function @a ArraySorting::mergeSubArrays called to merge the sorted arrays
-     * takes @c array, @c leftIndex, @c middleIndex and @c rightIndex as arguments.
+     * takes @c array, @c leftIndex, @c middleIndex and @c rightIndex as arguments. <br>
      * */
     mergeSubArrays(subArray, leftIndex, middleIndex, rightIndex);
 
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to merge the sorted arrays.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to merge the sorted arrays. <br>
  *         @param [in] subArray
  *         @param [in] leftIndex
  *         @param [in] middleIndex
@@ -131,8 +121,8 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
                                   unsigned int &rightIndex) {
 
     /**
-     * Initializing an @c int pointer array.
-     * @c int * array holds a pointer to an @c int value for each element.
+     * Initializing an @c int pointer array. <br>
+     * @c int * array holds a pointer to an @c int value for each element. <br>
      * */
     int *newSubArray = new int[rightIndex - leftIndex + 1];
 
@@ -143,7 +133,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
     /**
      * using while loop to insert value of old array to new array in sorted manner,
      * until @c startIndexPointer is less than or equal to @c middleIndex and
-     * @c endIndexPointer is also less than and equal to @c rightIndex.
+     * @c endIndexPointer is also less than and equal to @c rightIndex. <br>
      * */
     while (startIndexPointer <= middleIndex && endIndexPointer <= rightIndex) {
 
@@ -161,7 +151,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
     /**
      * using while loop to insert value of old array to new array in sorted manner,
      * until @c startIndexPointer is less than or equal to @c middleIndex
-     * which indicates the array is not completely inserted to the new array
+     * which indicates the array is not completely inserted to the new array. <br>
      * */
     while (startIndexPointer <= middleIndex) {
         newSubArray[newIndexPointer] = subArray[startIndexPointer]; /// assign value of old array at startIndex to new array.
@@ -172,7 +162,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
     /**
      * using while loop to insert value of old array to new array in sorted manner,
      * until @c endIndexPointer is less than or equal to @c rightIndex
-     * which indicates the array is not completely inserted to the new array
+     * which indicates the array is not completely inserted to the new array. <br>
      * */
     while (endIndexPointer <= rightIndex) {
         newSubArray[newIndexPointer] = subArray[endIndexPointer]; /// assign value of old array at endIndex to new array.
@@ -182,7 +172,7 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
 
     /**
      * function @a ArraySorting::copyNewArrayIntoOriginalArray is called to copy the values of new array into the old array.
-     * takes @c newSubArray, @c subArray, @c rightIndex - leftIndex + 1, and @c leftIndex as arguments.
+     * takes @c newSubArray, @c subArray, @c rightIndex - leftIndex + 1, and @c leftIndex as arguments. <br>
      * */
     copyNewArrayIntoOriginalArray(newSubArray, subArray, rightIndex - leftIndex + 1, leftIndex);
 
@@ -190,10 +180,10 @@ void ArraySorting::mergeSubArrays(int subArray[], unsigned int &leftIndex, unsig
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to copy the values of an array to another array
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to copy the values of an array to another array <br>
  *         @param [in] newArray
  *         @param [in] originalArray
  *         @param [in] arrayLength
@@ -210,20 +200,20 @@ void ArraySorting::copyNewArrayIntoOriginalArray(const int newArray[], int origi
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
  * Purpose: Method to sort the array by calling merge sort algorithm and
- * calculating the execution time for sorting the array.
+ * calculating the execution time for sorting the array. <br>
  *         @param [in] timeArray
  *         @return [out] void
  *         @pre Pre Condition - an array is passed
  *         @post Post Condition - execution time for each array is stored in an array
  * */
 void ArraySorting::sortArray(double timeArray[]) {
-    /** using for loop to iterate thorugh each array and
-     * calculate the execution time.
-     * U as a suffix to 0 means only unsigned values
+    /** using for loop to iterate through each array and
+     * calculate the execution time. <br>
+     * U as a suffix to 0 means only unsigned values. <br>
      * */
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
 
@@ -239,10 +229,10 @@ void ArraySorting::sortArray(double timeArray[]) {
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to reverse the an array.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to reverse the an array. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - array is reversed
@@ -250,8 +240,8 @@ void ArraySorting::sortArray(double timeArray[]) {
 void ArraySorting::reverseSortedArray() {
     /**
      * using 2 for loops to iterate through each array
-     * and swap the values to reverse the array
-     * U as a suffix to 0 means only unsigned values
+     * and swap the values to reverse the array. <br>
+     * U as a suffix to 0 means only unsigned values. <br>
      * */
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
         /// U as a suffix to 0 means only unsigned values
@@ -272,16 +262,16 @@ void ArraySorting::reverseSortedArray() {
  *         @post Post Condition - values are swapped.
  * */
 void ArraySorting::swap(int &firstValue, int &secondValue) {
-    int temp = firstValue; /// using a temporary variable to store the first value.
-    firstValue = secondValue; /// assigning the value of 2nd variable to first variable.
-    secondValue = temp; /// assigning the value of first variable stored in a temporary variable to the 2nd variable.
+    int temp = firstValue; /// using a temporary variable to store the first value. <br>
+    firstValue = secondValue; /// assigning the value of 2nd variable to first variable. <br>
+    secondValue = temp; /// assigning the value of first variable stored in a temporary variable to the 2nd variable. <br>
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to display a table of execution time of each array for random, sorted and reverse time in a well formatted fashion.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Method to display a table of execution time of each array for random, sorted and reverse time in a well formatted fashion. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - a table is printed to the console.
@@ -310,10 +300,10 @@ void ArraySorting::display() {
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print a divider line.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print a divider line. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - a line is printed to the console.
@@ -327,10 +317,10 @@ inline void ArraySorting::printDoubleDivider() {
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print a divider line.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print a divider line. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - a line is printed to the console.
@@ -344,19 +334,19 @@ inline void ArraySorting::printDivider() {
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print a table header.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print a table header. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - a table header is printed to the console.
  * */
 inline void ArraySorting::printHeader() {
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
      * */
     cout << left << setw(20) << "| Time Test";
 
@@ -364,136 +354,136 @@ inline void ArraySorting::printHeader() {
     /// U as a suffix to 0 means only unsigned values
     for (int i = 0U; i < NUMBER_OF_ARRAYS; i++) {
         /**
-         * using @c left keyword to left-align the data.
-         * using @c setw to have a well-formatted output with spacing of the specified width.
-         * using to_string() to convert a non string value to string such as int, float, double and char
+         * using @c left keyword to left-align the data. <br>
+         * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+         * using to_string() to convert a non string value to string such as int, float, double and char <br>
          * */
         cout << left << setw(12) << "| Array " + to_string(i + 1) + " ";
     }
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
-     * using @c endl to go to next line.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
+     * using @c endl to go to next line. <br>
      * */
     cout << left << setw(1) << "|" << endl;
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print execution time for random array sorting.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print execution time for random array sorting. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - values printed to the console.
  * */
 inline void ArraySorting::printRandomTimeResult() {
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
      * */
     cout << left << setw(20) << "| Random Time (ms)";
 
     /// using range based for loop to iterate through the array ArraySorting::estimatedTimeForSortingRandomArr
     for (double i: estimatedTimeForSortingRandomArr) {
         /**
-         * using @c left keyword to left-align the data.
-         * using @c setw to have a well-formatted output with spacing of the specified width.
-         * using @c setprecision = 6 to set the decimal values upto 5 digits.
-         * using pipe '|' to separate columns.
+         * using @c left keyword to left-align the data. <br>
+         * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+         * using @c setprecision = 6 to set the decimal values upto 5 digits. <br>
+         * using pipe '|' to separate columns. <br>
          * */
         cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
-     * using @c endl to go to next line.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
+     * using @c endl to go to next line. <br>
      * */
     cout << left << setw(1) << "|" << endl;
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print execution time for sorted array sorting.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print execution time for sorted array sorting. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - values printed to the console.
  * */
 inline void ArraySorting::printSortedTimeResult() {
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
      * */
     cout << left << setw(20) << "| Sorted Time (ms)";
 
     /// using range based for loop to iterate through the array ArraySorting::estimatedTimeForSortingSortedArr
     for (double i: estimatedTimeForSortingSortedArr) {
         /**
-         * using @c left keyword to left-align the data.
-         * using @c setw to have a well-formatted output with spacing of the specified width.
-         * using @c setprecision = 6 to set the decimal values upto 5 digits.
-         * using pipe '|' to separate columns.
+         * using @c left keyword to left-align the data. <br>
+         * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+         * using @c setprecision = 6 to set the decimal values upto 5 digits. <br>
+         * using pipe '|' to separate columns. <br>
          * */
         cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
 
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
-     * using @c endl to go to next line.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
+     * using @c endl to go to next line. <br>
      * */
     cout << left << setw(1) << "|" << endl;
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print execution time for reversed array sorting.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print execution time for reversed array sorting. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - values printed to the console.
  * */
 inline void ArraySorting::printReverseTimeResult() {
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
      * */
     cout << left << setw(20) << "| Reverse Time (ms)";
 
     /// using range based for loop to iterate through the array ArraySorting::estimatedTimeForReversingSortedArr
     for (double i: estimatedTimeForReversingSortedArr) {
         /**
-         * using @c left keyword to left-align the data.
-         * using @c setw to have a well-formatted output with spacing of the specified width.
-         * using @c setprecision = 6 to set the decimal values upto 5 digits.
-         * using pipe '|' to separate columns.
+         * using @c left keyword to left-align the data. <br>
+         * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+         * using @c setprecision = 6 to set the decimal values upto 5 digits. <br>
+         * using pipe '|' to separate columns. <br>
          * */
         cout << left << setw(2) << "| " << setw(10) << setprecision(6) << i;
     }
 
     /**
-     * using @c left keyword to left-align the data.
-     * using @c setw to have a well-formatted output with spacing of the specified width.
-     * using pipe '|' to separate columns.
-     * using @c endl to go to next line.
+     * using @c left keyword to left-align the data. <br>
+     * using @c setw to have a well-formatted output with spacing of the specified width. <br>
+     * using pipe '|' to separate columns. <br>
+     * using @c endl to go to next line. <br>
      * */
     cout << left << setw(1) << "|" << endl;
 }
 
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: inline Method to print array size.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: inline Method to print array size. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - array size is printed to the console.

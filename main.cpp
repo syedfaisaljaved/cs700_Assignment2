@@ -8,12 +8,12 @@
  ****************************/
 
 /**
- * '#' is called preprocessor directive.
- * '<>' is used for pre-defined header files.
- * It read the program before it is compiled and executes only those lines which starts with '#'
+ * '#' is called preprocessor directive. <br>
+ * '<>' is used for pre-defined header files. <br>
+ * It read the program before it is compiled and executes only those lines which starts with '#' <br>
+ * library that controls reading from and writing to the standard streams. <br>
  * */
-
-#include <iostream> /// library that controls reading from and writing to the standard streams.
+#include <iostream>
 
 /**
  * @file arraySorting.h
@@ -33,37 +33,95 @@
  * */
 using namespace std;
 
+/*****************************
+ * Module Names: <br>
+ *          1) Execution time for sorting random, sorted and reversed arrays. <br>
+ *          2) White box testing of sines and cosines. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022  <br>
+ * Purpose: main() Function prototype defined to document in doxygen only. <br>
+ *          It has no arguments and returns 0 if the program is executed successfully. <br>
+ ****************************/
+int main();
+
 /**
- * Module Name: Execution time for sorting random, sorted and reversed arrays.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
+ * Module Name: Execution time for sorting random, sorted and reversed arrays.  <br>
+ * Author: Faisal Javed  <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Function prototype to run module 1 by creating class objects and calling their methods. <br>
+ * */
+void arraySortingModule();
+
+/**
+ * Module Name: White box testing of sines and cosines. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Function prototype to test out sine cosine functions using white box testing <br>
+ * */
+void whiteBoxTesting();
+
+/*****************************
+ * Module Names: <br>
+ *          1) Execution time for sorting random, sorted and reversed arrays. <br>
+ *          2) White box testing of sines and cosines. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: main() Function serves as the starting point for program execution.
+ *          It has no arguments and returns 0 if the program is executed successfully. <br>
+ *          @param [in] void
+ *          @return [out] int
+ *          @post Post Condition - int is returned.
+ ****************************/
+int main() {
+/// program execution starts here.
+
+    /**
+     * Module Name: Execution time for sorting random, sorted and reversed arrays.
+     * */
+    arraySortingModule(); /// calling function @a arraySortingModule() to sort arrays.
+
+    /**
+    * Module Name: White box testing of sines and cosines.
+    * */
+    whiteBoxTesting(); /// calling function @a whiteBoxTesting() to test sine and cosine using white box testing.
+
+    return 0; /// returns 0 if the program is executed successfully because main() has a return type of integer.
+
+/// program terminates here.
+}
+
+
+/**
+ * Module Name: Execution time for sorting random, sorted and reversed arrays. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Function to run module 1 by creating class objects and calling their methods. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - displays a table in console.
  * */
 void arraySortingModule(){
-    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
+    /// creating an object of @a ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting1 = ArraySorting(100000);
     /// calling @a ArraySorting::display method to display the execution time of arrays
     arraySorting1.display();
 
-    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
+    /// creating an object of @a ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting2 = ArraySorting(1000000);
     /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting2.display();
 
-    /// creating an object of @class ArraySorting using explicit constructor which takes an argument.
+    /// creating an object of @a ArraySorting using explicit constructor which takes an argument.
     ArraySorting arraySorting3 = ArraySorting(10000000);
     /// calling @a ArraySorting::display method to display the execution time of arrays.
     arraySorting3.display();
 }
 
 /**
- * Module Name: White box testing of sines and cosines.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: Method to fill the array with random positive integers between 1-SIZE OF 2D ARRAY.
+ * Module Name: White box testing of sines and cosines. <br>
+ * Author: Faisal Javed <br>
+ * Date of Creation: 7th October, 2022 <br>
+ * Purpose: Function to test out sine cosine functions using white box testing. <br>
  *         @param [in] void
  *         @return [out] void
  *         @post Post Condition - displays a table in console.
@@ -122,30 +180,3 @@ void whiteBoxTesting(){
     testCosineValues(var16, 0); /// calling @a testCosineValues. takes 2 int as arguments.
     testCosineValues(var17, -9999); /// calling @a testCosineValues. takes 2 int as arguments.
 }
-
-/*****************************
- * Module Names:
- *          1) Execution time for sorting random, sorted and reversed arrays.
- *          2) White box testing of sines and cosines.
- * Author: Faisal Javed
- * Date of Creation: 7th October, 2022
- * Purpose: main() Function serves as the starting point for program execution.
- *          It has no arguments and returns 0 if the program is executed successfully.
- *          @param [in] void
- *          @return [out] int
- *          @post Post Condition - int is returned.
- ****************************/
-int main() { /// opening brace - program execution starts here.
-
-    /**
-     * Module Name: Execution time for sorting random, sorted and reversed arrays.
-     * */
-    arraySortingModule(); /// calling function @fn arraySortingModule() to sort arrays.
-
-    /**
-    * Module Name: White box testing of sines and cosines.
-    * */
-    whiteBoxTesting(); /// calling function @fn whiteBoxTesting() to test sine and cosine using white box testing.
-
-    return 0; /// returns 0 if the program is executed successfully because main() has a return type of integer.
-} /// closing brace - program terminates here.

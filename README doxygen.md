@@ -13,10 +13,10 @@
 <br>
 ### 2. Module 1 - Execution time for sorting random, sorted and reversed arrays.
 #### Contents - 
-1. arraySorting.cpp
+1. arraySorting.cpp (methods and variables are documented in class file not in cpp)
 2. arraySorting.h
 ### Usage - 
-#### Running this program to calculate the execution time for sorting random, sorted and reversed arrays.
+#### Running this program to calculate the execution time for sorting random, sorted and reversed arrays. Results are generated on Apple Macbook Air M1 
 ### Output - 
 1. Console output
     <br><br><img src="cs700-ass2-section1-output.png" height="500">
